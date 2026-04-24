@@ -8,18 +8,15 @@ namespace WebApp.Controllers
     {
         public IActionResult Index()
         {
-            return View();
-        }
+            //uso ViewData para enviar datos a la vista
+            ViewData["Id"] = 1;
+            ViewData["Marca"] = "Epson";
+            ViewData["Modelo"] = "Xlight";
+            ViewData["Numero de serie"] = "123456";
+            ViewData["Situacion"] = "Bueno";
+            ViewData["FechaDeAlta"] = DateTime.Now.ToString();
 
-        public IActionResult Privacy()
-        {
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

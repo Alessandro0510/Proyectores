@@ -1,83 +1,37 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp.Controllers
 {
     public class ProyectoresController : Controller
     {
-        // GET: ProyectoresController
-        public ActionResult Index()
+        public IActionResult Index()
         {
-            return View();
+            return Content(
+
+                "<h1>Proyectores</h1>"
+                + "<p> Aqui se mostrara los detalles del proyecto</p>",
+                "text/html"
+            );
         }
 
-        // GET: ProyectoresController/Details/5
-        public ActionResult Details(int id)
+        public IActionResult Details(int id)
         {
-            return View();
+            return Content(
+                "<h2>Nuevo Proyector</h2>" +
+                "<p>Aqui se mostrara la informaci&oacute;n de un proyector espec&iacute;fico\n" + id + "</p>",
+                "text/html"
+            );
         }
 
-        // GET: ProyectoresController/Create
-        public ActionResult Create()
+        public IActionResult Delete(int id)
         {
-            return View();
+            return Content(
+                "<h2>Dar de baja</h2>" +
+                "<p>Aqui se dara de baja el proyector\n" + id + "</p>",
+                "text/html"
+            );
         }
 
-        // POST: ProyectoresController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: ProyectoresController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: ProyectoresController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: ProyectoresController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: ProyectoresController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
