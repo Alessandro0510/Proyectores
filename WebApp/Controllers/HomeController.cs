@@ -9,13 +9,19 @@ namespace WebApp.Controllers
         public IActionResult Index()
         {
             //uso ViewData para enviar datos a la vista
-            ViewData["Id"] = 1;
-            ViewData["Marca"] = "Epson";
-            ViewData["Modelo"] = "Xlight";
-            ViewData["Numero de serie"] = "123456";
-            ViewData["Situacion"] = "Bueno";
-            ViewData["FechaDeAlta"] = DateTime.Now.ToString();
+            //ViewData["Id"] = 1;
+            //ViewData["Marca"] = "Epson";
+            //ViewData["Modelo"] = "Xlight";
+            //ViewData["Numero de serie"] = "123456";
+            //ViewData["Situacion"] = "Bueno";
+            //ViewData["FechaDeAlta"] = DateTime.Now.ToString();
 
+            ViewBag.Id = 2;
+            ViewBag.Marca = "Epson";
+            ViewBag.Modelo = "Xlight";
+            ViewBag.NumeroDeSerie = "123456";
+            ViewBag.Situacion = "Bueno";
+            ViewBag.FechaDeAlta = DateTime.Now.ToString();
             return View();
         }
     }
