@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using WebApp.Models;
 
 namespace WebApp.Controllers
@@ -25,7 +28,27 @@ namespace WebApp.Controllers
             //return View();
 
             //Uso de modelo de la vista  
-            Proyector proyector = new()
+            //Proyector proyector = new Proyector()
+
+            var modelo = LoadDATA();
+            return View(modelo);
+        }
+            private IEnumerable<Proyector> LoadDATA()
+        {
+            var proyectores = new List<Proyector>();
+
+            proyectores.Add(new Proyector()
+
+            {
+                Id = 1,
+                Marca = "Epson",
+                Modelo = "Xlight",
+                NumeroDeSerie = "123456",
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+            });
+
+            proyectores.Add(new Proyector()
 
             {
                 Id = 2,
@@ -34,10 +57,54 @@ namespace WebApp.Controllers
                 NumeroDeSerie = "123456",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
-            };
+            });
 
+            proyectores.Add(new Proyector()
 
-            return View(proyector);
+            {
+                Id = 3,
+                Marca = "Epson",
+                Modelo = "Xlight",
+                NumeroDeSerie = "123456",
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+            });
+
+            proyectores.Add(new Proyector()
+
+            {
+                Id = 4,
+                Marca = "Epson",
+                Modelo = "Xlight",
+                NumeroDeSerie = "123456",
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+            });
+
+            proyectores.Add(new Proyector()
+
+            {
+                Id = 5,
+                Marca = "Epson",
+                Modelo = "Xlight",
+                NumeroDeSerie = "123456",
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+            });
+
+            proyectores.Add(new Proyector()
+
+            {
+                Id = 2,
+                Marca = "Epson",
+                Modelo = "Xlight",
+                NumeroDeSerie = "123456",
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+            });
+        
+            
+            return proyectores;
         }
 
         public IActionResult Privacy()
