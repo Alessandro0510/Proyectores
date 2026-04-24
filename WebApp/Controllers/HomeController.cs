@@ -52,9 +52,9 @@ namespace WebApp.Controllers
 
             {
                 Id = 2,
-                Marca = "Epson",
-                Modelo = "Xlight",
-                NumeroDeSerie = "123456",
+                Marca = "LG",
+                Modelo = "Xlig574",
+                NumeroDeSerie = "123788",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
             });
@@ -63,10 +63,10 @@ namespace WebApp.Controllers
 
             {
                 Id = 3,
-                Marca = "Epson",
-                Modelo = "Xlight",
-                NumeroDeSerie = "123456",
-                Situacion = SituacionProyector.Bueno,
+                Marca = "Sony",
+                Modelo = "VPL-XW5000",
+                NumeroDeSerie = "123999",
+                Situacion = SituacionProyector.Regular,
                 FechaDeAlta = DateTime.Now
             });
 
@@ -74,10 +74,10 @@ namespace WebApp.Controllers
 
             {
                 Id = 4,
-                Marca = "Epson",
-                Modelo = "Xlight",
-                NumeroDeSerie = "123456",
-                Situacion = SituacionProyector.Bueno,
+                Marca = "Samsung",
+                Modelo = "Xlig874",
+                NumeroDeSerie = "15789",
+                Situacion = SituacionProyector.Malo,
                 FechaDeAlta = DateTime.Now
             });
 
@@ -85,25 +85,12 @@ namespace WebApp.Controllers
 
             {
                 Id = 5,
-                Marca = "Epson",
-                Modelo = "Xlight",
-                NumeroDeSerie = "123456",
+                Marca = "Panasonic",
+                Modelo = "X4874",
+                NumeroDeSerie = "178921",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
             });
-
-            proyectores.Add(new Proyector()
-
-            {
-                Id = 2,
-                Marca = "Epson",
-                Modelo = "Xlight",
-                NumeroDeSerie = "123456",
-                Situacion = SituacionProyector.Bueno,
-                FechaDeAlta = DateTime.Now
-            });
-        
-            
             return proyectores;
         }
 
