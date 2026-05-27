@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Text.RegularExpressions;
 using WebApp.Models;
 using WebApp.Services;
+
+
+using WebApp.ViewModels;
 
 namespace WebApp.Controllers
 {
@@ -12,10 +12,11 @@ namespace WebApp.Controllers
     public class HomeController : Controller
     {
         private IProyectoresService _service;
-        public HomeController()
+        public HomeController(IProyectoresService service)
         {
-            _service = new ProyectoresEnMemoriaService();
+            _service = service;
         }
+
         public IActionResult Index()
         {
             var modelo = _service.GetAll();
@@ -24,9 +25,9 @@ namespace WebApp.Controllers
            
         public IActionResult Create()
         { 
-            Proyector proyector = new Proyector();
-            proyector.FechaDeAlta = DateTime.Now;
-            return View(proyector); 
+            var modelo = new HomeCreateViewModel();
+            modelo.FechaDeAlta = DateTime.Now;
+            return View(modelo); 
         }
 
         [HttpPost]

@@ -1,12 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApp.Models
+namespace WebApp.ViewModels
 {
-    public class Proyector
+    public class HomeCreateViewModel
     {
-        [Key]
-        public int Id { get; set; }
-        [Required (ErrorMessage ="Debe proporcionar un valor para el campo Marca")]
+        [Required(ErrorMessage = "Debe proporcionar un valor para el campo Marca")]
         [StringLength(24)]
         public string Marca { get; set; }
         [Required(ErrorMessage = "Debe proporcionar un valor para el campo Modelo")]
@@ -15,24 +13,15 @@ namespace WebApp.Models
         public string NumeroDeSerie { get; set; }
         public SituacionProyector Situacion { get; set; }
         = SituacionProyector.Bueno;
-        [DataType(DataType.Date)]
-        public DateTime FechaDeAlta { get; set; }
-        = DateTime.Now;
-        [DataType(DataType.Date)]
+        public DateTime FechaDeAlta { get; set; }= DateTime.Now;
         public DateTime? FechaDeBaja { get; set; } = null;
     }
 
     public enum SituacionProyector
     {
         Bueno = 1,
-        Regular =2,
-        Malo =3
+        Regular = 2,
+        Malo = 3
     }
 }
-//----------------ATRIBUTOS DE VALIDACIÓN-------------------
-//No puede ser nulo
-//[Required]
-
-//Tamaño de caracteres
-//[StringLength]
 
