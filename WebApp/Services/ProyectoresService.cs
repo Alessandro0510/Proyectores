@@ -20,10 +20,35 @@ namespace WebApp.Services
                 _contexto.SaveChanges();
             }
         }
-        
+
+        public  Proyector? Delete(Proyector proyector)
+        {
+            if (proyector != null) 
+            { 
+            _contexto.Remove(proyector);
+            _contexto.SaveChanges();
+                return proyector;
+            }
+            return null;
+        }
+
+        public Proyector? GetProyectorById(int id)
+        {
+            return _contexto.Proyectores.FirstOrDefault<Proyector>(p => p.Id ==id);       
+        }
+
         public IEnumerable<Proyector> GetAll()
         {
             return _contexto.Proyectores.ToList<Proyector>();
+        }
+
+        public void Update(Proyector proyector)
+        {
+            if (proyector != null)
+            { 
+            _contexto.Proyectores.Update(proyector);
+                _contexto.SaveChanges();
+            }
         }
     }
 }

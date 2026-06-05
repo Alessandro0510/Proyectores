@@ -79,5 +79,29 @@ namespace WebApp.Services
             return proyectores;
         }
 
+        public Proyector Get(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Proyector proyector)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Proyector GetProyectorById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Proyector? Delete(Proyector proyector)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
